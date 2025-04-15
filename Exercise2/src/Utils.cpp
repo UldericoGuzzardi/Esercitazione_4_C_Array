@@ -102,21 +102,14 @@ bool ExportResult(const string& outputFilePath,
 
     file << "S = " << fixed << setprecision(2) << S << ", n = " << n << endl;
 
-    file << "w = [";
-    for (unsigned int i = 0; i < n; i++)
-        file << " " << w[i];
-    file << " ]" <<  endl;
+    
 
-	
-    file << "r = [";
-    for (unsigned int i = 0; i < n; i++)
-        file << " " << r[i];
-    file << " ]" <<  endl;
+	file << "w = "<< ArrayToString(n, w)<< endl; 
+	file << "r = "<< ArrayToString(n, r)<< endl; 
 
     file << "Rate of return of the portfolio: " << fixed << setprecision(4) << tot_r << endl;
     file << "V: "<< fixed << setprecision(2) << V << endl;
-
-    // Close File
+  // Close File
     file.close();
 
     return true;
